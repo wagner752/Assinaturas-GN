@@ -7,12 +7,8 @@ assinatura_custom.onload = () => {
     c.height = 257;
     render();
 };
-
-assinatura_custom.origin = 'anonymous';
-
-assinatura_custom.src = "https://raw.githubusercontent.com/wagner752/Assinaturas-GN/main/_img/assinatura.png";
-
-
+assinatura_custom.crossOrigin = "anonymous";
+assinatura_custom.src = "_img/assinatura.png";
 
 nome.oninput = setor.oninput = render;
 
@@ -81,17 +77,26 @@ function setSetor(setor){
 }
 
 function saveImage() {
+    
+    let link = document.getElementById('link');
+    link.setAttribute('download', 'assinaturaTemplate.png');
+    link.setAttribute('href', c.toDataURL().replace("image/png", "image/octet-stream"));
+    link.click();
+    
+    
     /*
     var download = document.getElementById('link');
     var image = document.getElementById('c').toDataURL("image/png").replace("image/png", "image/octet-stream");
     download.setAttribute("href", image);
-    */
-
+    
+    /*
     var canvaID = document.getElementById("c");
     image = canvaID.toDataURL("image/png");
     var link = document.createElement('assinatura');
+    link.origin = 'anonymous';
     link.download() = "assinatura.png";
     link.href = image;
     link.click();
+    */
 
 }
