@@ -11,7 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="https://raw.githubusercontent.com/wagner752/Assinaturas-GN/main/_css/estilo.css" rel="stylesheet" crossorigin="anonymous">    
+    <link href="_css/estilo.css" rel="stylesheet">    
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -65,8 +65,11 @@
                 <div id="toggle" class="signature">
                     <img crossorigin class="img-fluid" id="assinaturaTemplate"/>
                 </div>
-                
-                <button onclick="saveImage()" type="button" class="btn btn-primary">Baixar Assinatura</button>
+
+                <a id="link"></a>
+				<button onclick="saveImage()">Baixar</button>
+
+                <button onclick="saveImage()" class="btn btn-primary">Baixar Assinatura</button>
                 <img id="logo" src="https://github.com/wagner752/Assinaturas-GN/blob/main/_img/tex_logo.png?raw=true" class="img-fluid" style="width: 60px; height: 60px; margin-left: 70%; margin-bottom: 2%;">
                 
             </div>
@@ -85,177 +88,6 @@
     -->
   </body>
 
-  <script type="text/javascript">
-      ctx = c.getContext("2d");
-
-assinatura_custom = new Image();
-
-assinatura_custom.onload = () => {
-    c.width = 1080;
-    c.height = 257;
-    render();
-};
-
-
-
-assinatura_custom.origin = 'anonymous';
-
-assinatura_custom.src = "https://github.com/wagner752/Assinaturas-GN/blob/main/_img/assinatura.png?raw=true";
-
-
-
-nome.oninput = setor.oninput = render;
-
-function render() {
-    let {nome, setor} = getFormData();
-    setInitialImage();
-    setText(nome, setor);
-    setImage();
-}
-
-
-function getFormData() {
-    return {
-        nome: nome
-            .value,
-        setor: setor
-            .value
-    }
-}
-
-function setInitialImage() {
-    ctx.clearRect(0, 0, c.width, c.height);
-    ctx.globalCompositeOperation = "source-over";
-    ctx.drawImage(assinatura_custom, 0, 0, c.width, c.height);
-}
-
-function setClip() {
-    ctx.globalCompositeOperation = "destination-in";
-    ctx.globalCompositeOperation = "source-over";
-    ctx.font = "bolder 30.76px  Montserrat, sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillStyle = "black";
-}
-
-function setSetor(){
-    ctx.globalCompositeOperation = "destination-in";
-    ctx.globalCompositeOperation = "source-over";
-    ctx.font = "30.76px Montserrat, sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillStyle = "black";
-}
-
-function setImage() {
-    const assinatura = document.getElementById('assinaturaTemplate')
-    assinatura.src = c.toDataURL();
-    c.style.display = "none";
-}
-
-function setText(text, setor) {
-    setClip();
-    ctx.textBaseline = "hanging";
-    ctx.fillText(text, 270, 62);
-    setSetor(setor);
-    
-}
-
-function setSetor(setor){
-
-    ctx.globalCompositeOperation = "destination-in";
-    ctx.globalCompositeOperation = "source-over";
-    ctx.font = "30.76px Montserrat, sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillStyle = "black";
-    ctx.textBaseline = "hanging";
-    ctx.fillText(setor, 270, 100);
-}
-
-function saveImage() {
-    /*
-    var download = document.getElementById('link');
-    var image = document.getElementById('c').toDataURL("image/png").replace("image/png", "image/octet-stream");
-    download.setAttribute("href", image);
-    */
-
-    var canvaID = document.getElementById("c");
-    image = canvaID.toDataURL("image/png");
-    var link = document.createElement('assinatura');
-    link.download() = "assinatura.png";
-    link.href = image;
-    link.click();
-
-}
-  </script>
-
-  <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-        html{
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        body{
-            background-color: #006685;
-        }
-
-        .sideA{
-            background-color: white;
-            box-shadow: 10px 10px 5px #1f3b4c;
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 50px;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-            margin-top: 0%;
-            margin-bottom: 0%;
-
-        }
-
-        #logo{
-            top: 100%;
-        }
-
-        .sideB{
-            background-color: white;
-            margin-top: 0%;
-            border-top-left-radius: 0px;
-            box-shadow: 10px 10px 5px #1f3b4c;    
-        }
-
-        h3{
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 2%;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-        }
-
-        .sideB form{
-            margin-top: 2%;
-        }
-
-        button{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-
-        .btn-primary{
-            margin-top: 2%;
-            margin-bottom: 2%;
-            background-color: #a4cf4d;
-            border: white;
-        }
-
-        .btn-primary:hover{
-            margin-top: 2%;
-            margin-bottom: 2%;
-            background-color: #3dafb5;
-            border: white;
-        }
-
-  </style>
+  <script type="text/javascript" src="_js/main.js"></script>
 
 </html>
