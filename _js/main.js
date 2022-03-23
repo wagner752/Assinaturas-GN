@@ -10,7 +10,7 @@ assinatura_custom.onload = () => {
 
 assinatura_custom.origin = 'anonymous';
 
-assinatura_custom.src = "https://github.com/wagner752/Assinaturas-GN/blob/main/_img/assinatura.png?raw=true";
+assinatura_custom.src = "https://raw.githubusercontent.com/wagner752/Assinaturas-GN/main/_img/assinatura.png";
 
 
 
