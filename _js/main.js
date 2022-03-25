@@ -8,7 +8,7 @@ assinatura_custom.onload = () => {
     render();
 };
 assinatura_custom.crossOrigin = "anonymous"
-assinatura_custom.src = "https://cdn.jsdelivr.net/gh/wagner752/Assinaturas-GN@main/_img/assinatura.png";
+assinatura_custom.src = "https://rawcdn.githack.com/wagner752/Assinaturas-GN/01e0be3678309ce3cf3076244a22ba7fd935c396/_img/assinatura.png";
 
 nome.oninput = setor.oninput = render;
 
