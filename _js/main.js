@@ -1,4 +1,3 @@
-
 ctx = c.getContext("2d");
 
 assinatura_custom = new Image();
