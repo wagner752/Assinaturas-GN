@@ -7,7 +7,7 @@ assinatura_custom.onload = () => {
     c.height = 257;
     render();
 };
-assinatura_custom.crossOrigin = "anonymous";
+
 assinatura_custom.src = "https://cdn.jsdelivr.net/gh/wagner752/Assinaturas-GN@main/_img/assinatura.png";
 
 nome.oninput = setor.oninput = render;
