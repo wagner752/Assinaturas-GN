@@ -1,5 +1,5 @@
 ctx = c.getContext("2d");
-
+Access-Control-Allow-Origin: *;
 assinatura_custom = new Image();
 
 assinatura_custom.onload = () => {
