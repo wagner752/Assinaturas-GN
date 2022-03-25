@@ -1,5 +1,5 @@
 ctx = c.getContext("2d");
-Access-Control-Allow-Origin: *;
+
 assinatura_custom = new Image();
 
 assinatura_custom.onload = () => {
@@ -8,7 +8,7 @@ assinatura_custom.onload = () => {
     render();
 };
 assinatura_custom.crossOrigin = "anonymous"
-assinatura_custom.src = "https://raw.githack.com/wagner752/Assinaturas-GN/main/_img/assinatura.png" + "?not-from-cache-please";;
+assinatura_custom.src = "../_img/assinatura.png";
 
 nome.oninput = setor.oninput = render;
 
