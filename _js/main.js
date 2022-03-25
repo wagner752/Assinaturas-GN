@@ -8,7 +8,7 @@ assinatura_custom.onload = () => {
     render();
 };
 
-assinatura_custom.src = "https://cdn.jsdelivr.net/gh/wagner752/Assinaturas-GN@main/_img/assinatura.png";
+assinatura_custom.src = "https://cdn.jsdelivr.net/gh/wagner752/Assinaturas-GN@tree/main/_img/assinatura.png";
 
 nome.oninput = setor.oninput = render;
 
