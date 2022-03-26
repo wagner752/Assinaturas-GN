@@ -1,9 +1,3 @@
-fetch('https://raw.githubusercontent.com/wagner752/Assinaturas-GN/main/_js/main.js', {
-    headers: {
-        Access-Control-Allow-Origin: *;
-    }
-})
-
 ctx = c.getContext("2d");
 
 assinatura_custom = new Image();
