@@ -9,7 +9,7 @@ assinatura_custom.onload = () => {
 };
 //assinatura_custom.crossOrigin = "anonymous"
 
-assinatura_custom.src = ("https://github.com/wagner752/Assinaturas-GN/blob/main/_img/logo_gentil.png?raw=true", crossorigin="anonymous");
+assinatura_custom.src = "https://cors.io/?https://github.com/wagner752/Assinaturas-GN/blob/main/_img/assinatura.png?raw=true";
 
 nome.oninput = setor.oninput = render;
 
