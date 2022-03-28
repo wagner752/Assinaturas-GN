@@ -45,6 +45,11 @@ h3{
     margin-top: 2%;
 }
 
+.sideB img{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 button{
     display: flex;
     justify-content: center;
