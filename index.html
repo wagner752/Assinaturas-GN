@@ -57,6 +57,11 @@
                                 <option>Suprimentos</option>
                             </select>
                         </div> <!-- /col -->
+			    
+                        <div class="col">
+                            <label id="label-telefone" for="telefone" style="display: none;">Telefone</label>
+                            <input type="text" class="form-control" placeholder="Ramal" id="telefone">
+                        </div>
                     </div> <!-- /form-control -->
                 </form>
                 
@@ -103,13 +108,13 @@
 	assinatura_custom.src = "assinatura.png";
 	
 	//Chamar o que é digitado para a função de rederização
-	nome.oninput = setor.oninput = render;
+	nome.oninput = setor.oninput = telefone.oninput = render;
 	
 	//Renderização da imagem
 	function render() {
-	    let {nome, setor} = getFormData();
+	    let {nome, setor, telefone} = getFormData();
 	    setInitialImage();
-	    setText(nome, setor);
+	    setText(nome, setor, telefone);
 	    setImage();
 	}
 	
@@ -119,7 +124,9 @@
 		nome: nome
 		    .value,
 		setor: setor
-		    .value
+		    .value,
+        telefone: telefone.
+            value
 	    }
 	}
 	
@@ -146,11 +153,12 @@
 	}
 	
 	//Colocação do texto na imgem
-	function setText(text, setor) {
+	function setText(text, setor, telefone) {
 	    setClip();
 	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
 	    ctx.fillText(text, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	    setSetor(setor); //Configuração do setor/segundo formulário
+        setTelefone(telefone);
 	}
 	
 	//Configuração do segundo formulárioa
@@ -163,6 +171,16 @@
 	    ctx.textBaseline = "hanging";
 	    ctx.fillText(setor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
+
+    function setTelefone(telefone){
+        ctx.globalCompositeOperation = "destination-in";
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+	    ctx.fillStyle = "black";
+	    ctx.textBaseline = "hanging";
+	    ctx.fillText(telefone, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+    }
 	  
 	//Função para baixar a imagem
 	function saveImage() {
