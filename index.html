@@ -183,12 +183,16 @@
     }
 	  
 	  
-	  let input = document.querySelector(".chaveNome" && ".chaveSetor" && ".chaveTelefone");
-	let button = document.querySelector(".btn");
+	  let inputNome = document.querySelector(".chaveNome");
+ 	  let inputSetor = document.querySelector(".chaveSetor");
+	  let inputTelefone = document.querySelector(".chaveTelefone");
+	  let button = document.querySelector(".btn");
 
 button.disabled = true; //setting button state to disabled
 
-input.addEventListener("change", stateHandle);
+inputNome.addEventListener("change", stateHandle);
+inputSetor.addEventListener("change", stateHandle); 
+inputTelefone.addEventListener("change", stateHandle);
 
 function stateHandle() {
     if (document.querySelector(".chaveNome".value === "") && document.querySelector(".chaveSetor".value === "") && document.querySelector(".chaveTelefone".value === "")) {
