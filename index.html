@@ -35,13 +35,13 @@
                         <div class="col">
 				<!-- Input referente ao nome do colaborador -->
                             <label id="label-nome" for="nome" style="display: none;">Nome do colaborador</label>
-                            <input type="text" class="form-control chaveNome" placeholder="Nome e Sobrenome" id="nome" required="true">
+                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nome" required="true">
                         </div>
                         
                         <div class="col">
 				<!-- Input referente ao setor do colaborador -->
                             <label for="setor"></label>
-                            <select id="setor" class="form-control chaveSetor" required="true">
+                            <select id="setor" class="form-control" required="true">
                                 <option value="" selected>Selecione o setor</option>
                                 <option>Administração</option>
                                 <option value="Célula de Inteligência Comercial">Célula de Inteligência Comercial</option>
@@ -63,7 +63,7 @@
 			    
                         <div class="col">
                             <label id="label-telefone" for="telefone" style="display: none;">Telefone</label>
-                            <input type="text" class="form-control chaveTelefone" placeholder="(XX) XXXXX-XXXX" id="telefone" required="true" style="margin-top: 2%;">
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required="true" style="margin-top: 2%;">
                         </div>
                     </div> <!-- /form-control -->
                 </form>
