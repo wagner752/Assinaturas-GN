@@ -19,7 +19,6 @@ body{
     align-items: center;
     margin-top: 0%;
     margin-bottom: 0%;
-
 }
 
 #logo{
@@ -45,7 +44,7 @@ h3{
     margin-top: 2%;
 }
 
-.sideB img{
+.sideB > img{
     margin-top: 2%;
     margin-bottom: 2%;
 }
@@ -54,7 +53,6 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .btn-primary{
