@@ -195,12 +195,12 @@ inputSetor.addEventListener("change", stateHandle);
 inputTelefone.addEventListener("change", stateHandle);
 
 function stateHandle() {
-    if (document.querySelector(".chaveNome").value === "")
-	    if (document.querySelector(".chaveSetor").value === "")
-		    if (document.querySelector(".chaveTelefone").value === "") {
-        button.disabled = false; //button remains disabled
+    if (document.querySelector(".chaveNome").value === "" &&
+	    document.querySelector(".chaveSetor").value === "" &&
+		    document.querySelector(".chaveTelefone").value === "" {
+        button.disabled = true; //button remains disabled
     } else {
-        button.disabled = true; //button is enabled
+        button.disabled = false; //button is enabled
     }
 }
 	  
