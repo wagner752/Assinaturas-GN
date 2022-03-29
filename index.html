@@ -33,12 +33,12 @@
                     <div class="form-row">
                         <div class="col">
                             <label id="label-nome" for="nome" style="display: none;">Nome do colaborador</label>
-                            <input type="text" class="form-control inputName" placeholder="Nome e Sobrenome" id="nome" required="true">
+                            <input type="text" class="form-control chave" placeholder="Nome e Sobrenome" id="nome" required="true">
                         </div>
                         
                         <div class="col">
                             <label for="setor"></label>
-                            <select id="setor" class="form-control" required="true">
+                            <select id="setor" class="form-control chave" required="true">
                                 <option value="" selected>Selecione o setor</option>
                                 <option>Administração</option>
                                 <option value="Célula de Inteligência Comercial">Célula de Inteligência Comercial</option>
@@ -60,7 +60,7 @@
 			    
                         <div class="col">
                             <label id="label-telefone" for="telefone" style="display: none;">Telefone</label>
-                            <input type="text" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone" required="true">
+                            <input type="text" class="form-control chave" placeholder="(XX) XXXXX-XXXX" id="telefone" required="true">
                         </div>
                     </div> <!-- /form-control -->
                 </form>
@@ -183,7 +183,7 @@
     }
 	  
 	  
-	  let input = document.querySelector(".inputName");
+	  let input = document.querySelector(".chave");
 	let button = document.querySelector(".btn");
 
 button.disabled = true; //setting button state to disabled
@@ -191,7 +191,7 @@ button.disabled = true; //setting button state to disabled
 input.addEventListener("change", stateHandle);
 
 function stateHandle() {
-    if (document.querySelector(".inputName").value === "") {
+    if (document.querySelector(".chave").value === "") {
         button.disabled = true; //button remains disabled
     } else {
         button.disabled = false; //button is enabled
