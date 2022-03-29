@@ -193,7 +193,7 @@
 	function saveImage() {
 	    let link = document.getElementById('link');
 	    $("#telefone").prop('required', true);
-	    link.setAttribute('download', 'assinaturaTemplate.png');
+	    link.setAttribute('download', 'assinatura.png');
 	    link.setAttribute('href', c.toDataURL().replace("image/png", "image/octet-stream"));
 	    link.click()
 	}
