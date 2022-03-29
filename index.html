@@ -33,7 +33,7 @@
                     <div class="form-row">
                         <div class="col">
                             <label id="label-nome" for="nome" style="display: none;">Nome do colaborador</label>
-                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nome" required="true">
+                            <input type="text" class="form-control inputName" placeholder="Nome e Sobrenome" id="nome" required="true">
                         </div>
                         
                         <div class="col">
@@ -183,18 +183,18 @@
     }
 	  
 	  
-	  let input = document.querySelector(".nome");
-	let button = document.querySelector(".button");
+	  let input = document.querySelector(".inputName");
+	let button = document.querySelector(".btn");
 
-button.disabled = true; //setting button state to disabled
+btn.disabled = true; //setting button state to disabled
 
-input.addEventListener("change", stateHandle);
+inputName.addEventListener("change", stateHandle);
 
 function stateHandle() {
-    if (document.querySelector(".nome").value === "") {
-        button.disabled = true; //button remains disabled
+    if (document.querySelector(".inputName").value === "") {
+        btn.disabled = true; //button remains disabled
     } else {
-        button.disabled = false; //button is enabled
+        btn.disabled = false; //button is enabled
     }
 }
 	  
