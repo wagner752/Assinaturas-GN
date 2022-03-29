@@ -198,9 +198,9 @@ function stateHandle() {
     if (document.querySelector(".chaveNome").value === "")
 	    if (document.querySelector(".chaveSetor").value === "")
 		    if (document.querySelector(".chaveTelefone").value === "") {
-        button.disabled = true; //button remains disabled
+        button.disabled = false; //button remains disabled
     } else {
-        button.disabled = false; //button is enabled
+        button.disabled = true; //button is enabled
     }
 }
 	  
