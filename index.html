@@ -64,12 +64,12 @@
 			<div class="row">
 			    <div class="col">
                             	<label id="label-telefone" for="telefone" style="display: none;">Telefone</label>
-                            	<input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone" style="margin-top: 2%; width: 150px;">
+                            	<input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone" style="margin-top: 2%; width: 200px;">
                             </div>
 				
 			    <div class="col">
                             	<label id="label-telefone" for="telefone" style="display: none;">Telefone</label>
-                            	<input type="tel" class="form-control" placeholder="XXXX" id="ramal" style="margin-top: 2%; margin-left: 0px; width: 200px;">
+                            	<input type="tel" class="form-control" placeholder="XXXX" id="ramal" style="margin-top: 2%; width: 150px;">
                             </div>
 			</div>
                         
@@ -122,13 +122,13 @@
 	assinatura_custom.src = "assinatura.png";
 	
 	//Chamar o que é digitado para a função de rederização
-	nome.oninput = setor.oninput = telefone.oninput = render;
+	nome.oninput = setor.oninput = telefone.oninput = ramal.oninput = render;
 	
 	//Renderização da imagem
 	function render() {
 	    let {nome, setor, telefone} = getFormData();
 	    setInitialImage();
-	    setText(nome, setor, telefone);
+	    setText(nome, setor, telefone, ramal);
 	    setImage();
 	}
 	
@@ -139,8 +139,10 @@
 		    .value,
 		setor: setor
 		    .value,
-                telefone: telefone.
-                value
+                telefone: telefone
+                    .value,
+		ramal: ramal
+		    .value
 	    }
 	}
 	
@@ -167,12 +169,13 @@
 	}
 	
 	//Colocação do texto na imgem
-	function setText(text, setor, telefone) {
+	function setText(text, setor, telefone, ramal) {
 	    setClip();
 	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
 	    ctx.fillText(text, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	    setSetor(setor); //Configuração do setor/segundo formulário
-        setTelefone(telefone);
+            setTelefone(telefone);
+	    setRamal(ramal);
 	}
 	
 	//Configuração do segundo formulárioa
@@ -195,6 +198,16 @@
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
 	    ctx.fillText(telefone, 270, 138); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	}
+	  
+	function setRamal(ramal){
+	    ctx.globalCompositeOperation = "destination-in";
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+	    ctx.fillStyle = "black";
+	    ctx.textBaseline = "hanging";
+	    ctx.fillText(ramal, 350, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	  
 	//Função para baixar a imagem
