@@ -1,70 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-html{
-    height: 100%;
+body{
+    background: url("../_img/capa.png");
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
-body{
-    background-color: #006685;
+html, body, .capa{
+	height: 100%;
 }
 
-.sideA{
-    background-color: white;
-    box-shadow: 10px 10px 5px #1f3b4c;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 50px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    margin-top: 0%;
-    margin-bottom: 0%;
+.capa {
+	display: table;
+	width: 100%; 
 }
 
-#logo{
-    top: 100%;
+.texto-capa {
+	text-align: center;
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
 }
 
-.sideB{
-    background-color: white;
-    margin-top: 0%;
-    border-top-left-radius: 0px;
-    box-shadow: 10px 10px 5px #1f3b4c;    
-}
-
-h3{
+.texto-capa h1{
+	font-size: 100px;
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 2%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
 }
 
-.sideB form{
-    margin-top: 2%;
+.btn-custom{
+    color: white;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	width:  390px;
+	margin-left: 3%;
 }
 
-.sideB > img{
-    margin-top: 2%;
-    margin-bottom: 2%;
+.btn-azul{
+    background-color: #89d340;
+    font-family: 'Montserrat', sans-serif;
 }
 
-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn-azul:hover{
+    background-color: #181f25;
+    color: white;
 }
 
-.btn-primary{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: #a4cf4d;
-    border: white;
+.btn-branco{
+    font-family: 'Montserrat', sans-serif;
+    
+	color: white;
+    background-color: #0c6984;
 }
 
-.btn-primary:hover{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: #3dafb5;
-    border: white;
+.btn-branco:hover{
+    color: #181f25;
+	background-color: white
+}
+
+section#colaborador{
+    background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    width: 600px;
 }
