@@ -82,6 +82,13 @@ input#nome{
 	size: 300px;
 }
 
+section#diretor{
+    padding-top: 10%;
+    padding-bottom: auto;
+    height: 100%;
+    width: 100%;
+}
+
 section#diretor form{
 	color: white;
 	font-weight: bolder;
