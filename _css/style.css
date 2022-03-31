@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    background: url("../_img/capa.png");
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+html, body, .capa{
+	height: 100%;
+}
+
+.capa {
+	display: table;
+	width: 100%; 
+}
+
+.texto-capa {
+	text-align: center;
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.texto-capa h1{
+	font-size: 100px;
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-custom{
+    color: white;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	width:  390px;
+	margin-left: 3%;
+}
+
+.btn-azul{
+    background-color: #89d340;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-azul:hover{
+    background-color: #181f25;
+    color: white;
+}
+
+.btn-branco{
+    font-family: 'Montserrat', sans-serif;
+    
+	color: white;
+    background-color: #0c6984;
+}
+
+.btn-branco:hover{
+    color: #181f25;
+	background-color: white
+}
+
+section#colaborador{
+    background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    height: 600px;
+    width: 100%;
+}
