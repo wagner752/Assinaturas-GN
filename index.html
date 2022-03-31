@@ -111,6 +111,17 @@
                         </div>
                     </div> <!-- /form-row -->
 			 
+			  <!-- Canva referente a imagem, usado apenas para gerar a imagem -->
+			<canvas class="img-fluid" id="cDiretor" width="100%" height="100%"></canvas>
+
+			<a id="link" target="new_blank"></a>
+			<div id="toggle" class="signature">
+			    <img crossOrigin="anonymous" class="img-fluid" id="assinaturaTemplateDiretor" style="margin-top: 2%;">
+			</div>
+
+			<!-- Download da imagem -->
+			<button type="submit" onclick="saveImageDiretor()" class="btn btn-primary btn-azul" style="margin-top: 2%; border: none;">Baixar Assinatura</button>
+			 
                 </form>
 	    </div> <!-- /row -->
 	</div> <!-- /container -->
@@ -132,6 +143,7 @@
   <script type="text/javascript" crossorigin="anonymous">
 	//Manipulação do Canva em 2D
 	ctx = c.getContext("2d");
+	ctx = cDiretor.getContext("2d");
 
 	assinatura_custom = new Image();
 	//Tamanho da assinatura, devendo ser o mesmo tamanho da imagem para redenrização
@@ -140,13 +152,25 @@
 	    c.height = 257;
 	    render();
 	};
+	  
+	assinatura_customDiretor = new Image();
+	//Tamanho da assinatura, devendo ser o mesmo tamanho da imagem para redenrização
+	assinatura_customDiretor.onload = () => {
+	    cDiretor.width = 1080;
+	    cDiretor.height = 257;
+	    render();
+	};
+	  
 	assinatura_custom.crossOrigin = "anonymous"
-	
+	assinatura_customDiretor.crossOrigin = "anonymous"
+	  
 	//Local do arquivo no repositório 
 	assinatura_custom.src = "assinatura.png";
+	assinatura_customDiretor.src = "assinatura.png";
 	
 	//Chamar o que é digitado para a função de rederização
 	nomeColaborador.oninput = setor.oninput = telefoneColaborador.oninput = render;
+	nomeDiretor.oninput = cargoDiretor.oninput = telefoneDiretor.oninput = render;
 	
 	//Renderização da imagem
 	function render() {
@@ -154,6 +178,13 @@
 	    setInitialImage();
 	    setText(nomeColaborador, setor, telefoneColaborador);
 	    setImage();
+	}
+	
+	function render() {
+	    let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormData();
+	    setInitialImageDiretor();
+	    setText(nomeDiretor, cargoDiretor, telefoneDiretor);
+	    setImageDiretor();
 	}
 	
 	//Função para gerar os dados que advem do fomulário, retornando os seus valores
@@ -167,11 +198,29 @@
                     .value
 	    }
 	}
+	 
+	//Função para gerar os dados que advem do fomulário, retornando os seus valores
+	function getFormData() {
+	    return {
+		nomeDiretor: nomeDiretor
+		    .value,
+		cargoDiretor: cargoDiretor
+		    .value,
+                telefoneDiretor: telefoneDiretor
+                    .value
+	    }
+	}
 	
 	function setInitialImage() {
 	    ctx.clearRect(0, 0, c.width, c.height);
 	    ctx.globalCompositeOperation = "source-over";
 	    ctx.drawImage(assinatura_custom, 0, 0, c.width, c.height);
+	}
+	  
+	function setInitialImageDiretor() {
+	    ctx.clearRect(0, 0, cDiretor.width, cDiretor.height);
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.drawImage(assinatura_customDiretor, 0, 0, cDiretor.width, cDiretor.height);
 	}
 	
 	//Função de configuração do primeiro formulário
@@ -189,6 +238,12 @@
 	    assinatura.src = c.toDataURL();
 	    c.style.display = "none";
 	}
+	  
+	function setImageDiretor() {
+	    const assinatura = document.getElementById('assinaturaTemplateDiretor')
+	    assinatura.src = cDiretor.toDataURL();
+	    cDiretor.style.display = "none";
+	}
 	
 	//Colocação do texto na imgem
 	function setText(textColaborador, setor, telefoneColaborador) {
@@ -197,6 +252,15 @@
 	    ctx.fillText(textColaborador, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	    setSetor(setor); //Configuração do setor/segundo formulário
             setTelefone(telefoneColaborador);
+	}
+	  
+	//Colocação do texto na imgem
+	function setText(textDiretor, cargoDiretor, telefoneDiretor) {
+	    setClip();
+	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
+	    ctx.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    setCargoDiretor(cargoDiretor); //Configuração do setor/segundo formulário
+            setTelefone(telefoneDiretor);
 	}
 	
 	//Configuração do segundo formulárioa
@@ -209,6 +273,17 @@
 	    ctx.textBaseline = "hanging";
 	    ctx.fillText(setor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
+	  
+	//Configuração do segundo formulárioa
+	function setCargoDiretor(cargoDiretor){
+	    ctx.globalCompositeOperation = "destination-in";
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+	    ctx.fillStyle = "black";
+	    ctx.textBaseline = "hanging";
+	    ctx.fillText(cargoDiretor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	}
 	
 	//Configuração de campo de telefone
 	function setTelefone(telefoneColaborador){
@@ -219,6 +294,17 @@
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
 	    ctx.fillText(telefoneColaborador, 420, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	}
+	  
+	//Configuração de campo de telefone
+	function setTelefoneDiretor(telefoneDiretor){
+	    ctx.globalCompositeOperation = "destination-in";
+            ctx.globalCompositeOperation = "source-over";
+            ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+            ctx.fillStyle = "black";
+            ctx.textBaseline = "hanging";
+	    ctx.fillText(telefoneDiretor, 420, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	  
 	//Função para baixar a imagem
