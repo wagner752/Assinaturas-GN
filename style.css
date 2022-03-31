@@ -62,10 +62,16 @@ html, body, .capa{
 
 section#colaborador{
     background-color: white;
-	padding-top: 20px;
-	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     height: 700px;
     width: 100%;
+}
+
+section#colaborador img{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 input#nome{
