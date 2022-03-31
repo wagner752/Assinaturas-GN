@@ -113,13 +113,13 @@
 	assinatura_custom.src = "assinatura.png";
 	
 	//Chamar o que é digitado para a função de rederização
-	nome.oninput = setor.oninput = telefone.oninput = ramal.oninput = render;
+	nome.oninput = setor.oninput = telefone.oninput = render;
 	
 	//Renderização da imagem
 	function render() {
-	    let {nome, setor, telefone, ramal} = getFormData();
+	    let {nome, setor, telefone} = getFormData();
 	    setInitialImage();
-	    setText(nome, setor, telefone, ramal);
+	    setText(nome, setor, telefone);
 	    setImage();
 	}
 	
@@ -131,9 +131,7 @@
 		setor: setor
 		    .value,
                 telefone: telefone
-                    .value,
-		ramal: ramal
-		    .value
+                    .value
 	    }
 	}
 	
@@ -160,13 +158,12 @@
 	}
 	
 	//Colocação do texto na imgem
-	function setText(text, setor, telefone, ramal) {
+	function setText(text, setor, telefone) {
 	    setClip();
 	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
 	    ctx.fillText(text, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	    setSetor(setor); //Configuração do setor/segundo formulário
             setTelefone(telefone);
-	    setRamal(ramal);
 	}
 	
 	//Configuração do segundo formulárioa
@@ -189,16 +186,6 @@
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
 	    ctx.fillText(telefone, 300, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
-	}
-	  
-	function setRamal(ramal){
-	    ctx.globalCompositeOperation = "destination-in";
-	    ctx.globalCompositeOperation = "source-over";
-	    ctx.font = "30.76px Montserrat, sans-serif";
-	    ctx.textAlign = "left";
-	    ctx.fillStyle = "black";
-	    ctx.textBaseline = "hanging";
-	    ctx.fillText(ramal, 603, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	  
 	//Função para baixar a imagem
