@@ -61,9 +61,13 @@ html, body, .capa{
 }
 
 section#colaborador{
-    background-color: #89d340;
+    background-color: white;
 	padding-top: 20px;
 	padding-bottom: 20px;
-    height: 600px;
+    height: 700px;
     width: 100%;
+}
+
+input#nome{
+	size: 300px;
 }
