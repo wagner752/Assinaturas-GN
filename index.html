@@ -158,7 +158,7 @@
 	assinatura_customDiretor.onload = () => {
 	    cDiretor.width = 1080;
 	    cDiretor.height = 257;
-	    render();
+	    renderDiretor();
 	};
 	  
 	assinatura_custom.crossOrigin = "anonymous"
@@ -166,7 +166,7 @@
 	  
 	//Local do arquivo no repositório 
 	assinatura_custom.src = "assinatura.png";
-	assinatura_customDiretor.src = "assinatura.png";
+	assinatura_customDiretor.src = "aaa.png";
 	
 	//Chamar o que é digitado para a função de rederização
 	nomeColaborador.oninput = setor.oninput = telefoneColaborador.oninput = render;
@@ -180,10 +180,10 @@
 	    setImage();
 	}
 	
-	function render() {
-	    let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormData();
+	function renderDiretor() {
+	    let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormDataDiretor();
 	    setInitialImageDiretor();
-	    setText(nomeDiretor, cargoDiretor, telefoneDiretor);
+	    setTextDiretor(nomeDiretor, cargoDiretor, telefoneDiretor);
 	    setImageDiretor();
 	}
 	
@@ -200,7 +200,7 @@
 	}
 	 
 	//Função para gerar os dados que advem do fomulário, retornando os seus valores
-	function getFormData() {
+	function getFormDataDiretor(){
 	    return {
 		nomeDiretor: nomeDiretor
 		    .value,
@@ -255,7 +255,7 @@
 	}
 	  
 	//Colocação do texto na imgem
-	function setText(textDiretor, cargoDiretor, telefoneDiretor) {
+	function setTextDiretor(textDiretor, cargoDiretor, telefoneDiretor) {
 	    setClip();
 	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
 	    ctx.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
