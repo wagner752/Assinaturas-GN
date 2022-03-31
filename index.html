@@ -253,7 +253,7 @@
 		assinatura_customDiretor.onload = () => {
 		    cDiretor.width = 1080;
 		    cDiretor.height = 257;
-		    renderDiretor();
+		    render();
 		};
 
 	assinatura_customDiretor.crossOrigin = "anonymous"
@@ -262,7 +262,7 @@
 
 	nomeDiretor.oninput = cargoDiretor.oninput = telefoneDiretor.oninput = render;
 
-	function renderDiretor() {
+	function render(){
 		   let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormDataDiretor();
 		   setInitialImageDiretor();
 		   setTextDiretor(nomeDiretor, cargoDiretor, telefoneDiretor);
