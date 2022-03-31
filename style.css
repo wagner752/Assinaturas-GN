@@ -71,3 +71,7 @@ section#colaborador{
 input#nome{
 	size: 300px;
 }
+
+section#diretor form{
+	background-color: transparent;
+}
