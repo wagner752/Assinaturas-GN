@@ -74,9 +74,12 @@ input#nome{
 
 section#diretor form{
 	color: white;
+	font-weight: bolder;
 }
 
 section#diretor input{
 	background-color: transparent;
 	border: 2px solid white;
+	color: white;
+	font-weight: bolder;
 }
