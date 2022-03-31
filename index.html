@@ -253,7 +253,7 @@
 		assinatura_customDiretor.onload = () => {
 		    cDiretor.width = 1080;
 		    cDiretor.height = 257;
-		    render();
+		    renderDiretor();
 		};
 
 	assinatura_customDiretor.crossOrigin = "anonymous"
@@ -262,7 +262,7 @@
 
 	nomeDiretor.oninput = cargoDiretor.oninput = telefoneDiretor.oninput = render;
 
-	function render(){
+	function renderDiretor(){
 		   let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormDataDiretor();
 		   setInitialImageDiretor();
 		   setTextDiretor(nomeDiretor, cargoDiretor, telefoneDiretor);
@@ -310,7 +310,7 @@
 	   ctx2.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
 	   ctx2.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	   setCargoDiretor(cargoDiretor); //Configuração do setor/segundo formulário
-       	   setTelefone(telefoneDiretor);
+       	   setTelefoneDiretor(telefoneDiretor);
 	}
 
 	  
