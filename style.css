@@ -66,10 +66,10 @@ section#colaborador{
     padding-bottom: auto;
     height: 100%;
     width: 100%;
-    border-left: 15px solid #1f3b4c;
-    border-top: 15px solid #181f25;
-    border-right: 15px solid #89d340;
-    border-bottom: 15px solid #006685;
+    border-left: 30px solid #1f3b4c;
+    border-top: 30px solid #181f25;
+    border-right: 30px solid #89d340;
+    border-bottom: 30px solid #006685;
 }
 
 section#colaborador img{
