@@ -62,8 +62,9 @@ html, body, .capa{
 
 section#colaborador{
     backgroud-color: white;
-	height: 100%;
-    width: 10%;
+    height: 100%;
+    width: 100%;
+	border-left: 50% solid transparent;
 }
 
 section#colaborador img{
