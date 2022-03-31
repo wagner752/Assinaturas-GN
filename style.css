@@ -83,3 +83,19 @@ section#diretor input{
 	color: white;
 	font-weight: bolder;
 }
+
+section#diretor input::placeholder {
+  color: white;
+  font-weight: bolder;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: white;
+ font-weight: bolder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: white;
+ font-weight: bolder;
+}
