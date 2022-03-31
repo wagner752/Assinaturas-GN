@@ -27,7 +27,7 @@
             <div class="row">
                 
                 <form>
-                    <div class="form-row align-items-center">
+                    <div class="form-group col">
                         <div class="col-auto">
                                 <!-- Input referente ao nome do colaborador -->
                             <label id="label-nome" for="nome">Nome do colaborador</label>
@@ -36,7 +36,7 @@
                     </div>
                 
 
-                    <div class="col-auto">
+                    <div class="form-group col">
                         <!-- Input referente ao setor do colaborador -->
                         <label for="setor">Setor</label>
                         <select id="setor" class="form-control" required="true">
@@ -58,18 +58,12 @@
                             <option>Suprimentos</option>
                         </select>
                     </div> <!-- /col -->
-
+                    
                     <div class="row">
                         <div class="col">
-                            <label id="label-telefone" for="telefone" style="margin-top: 2%;">Telefone</label>
-                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone" style="margin-top: 2%; width: 200px;">
+                            <label id="label-telefone" for="telefone">Celular (Opcional)</label>
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone">
                         </div>
-                    
-                        <div class="col">
-                            <label id="label-ramal" for="ramal" style="margin-top: 2%;">Ramal</label>
-                            <input type="tel" class="form-control" placeholder="XXXX" id="ramal" style="width: 150px;">
-                        </div>
-
                     </div> <!-- /form-row -->
                 </form>
 
