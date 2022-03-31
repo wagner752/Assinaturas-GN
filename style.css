@@ -61,12 +61,9 @@ html, body, .capa{
 }
 
 section#colaborador{
-    height: 100%;
-    width: 100%;
-}
-
-section#colaborador form{
-    background-color: whiter;
+    backgroud-color: white;
+	height: 100%;
+    width: 5px;
 }
 
 section#colaborador img{
