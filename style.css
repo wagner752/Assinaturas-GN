@@ -64,8 +64,12 @@ section#colaborador{
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
-    height: 700px;
+    height: 100%;
     width: 100%;
+    border-left: 5px #1f3b4c;
+    border-top: 5px #181f25;
+    border-right: 5px #e0a156;
+    border-bottom: 5px #e0a156;
 }
 
 section#colaborador img{
