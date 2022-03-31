@@ -246,7 +246,7 @@
 	</script>
 -->	
 	<script type="text/javascript" crossorigin="anonymous">
-	ctx2 = cDiretor.getContext("2d");
+	ctx = cDiretor.getContext("2d");
 
 	assinatura_customDiretor = new Image();
 		//Tamanho da assinatura, devendo ser o mesmo tamanho da imagem para redenrização
@@ -290,25 +290,25 @@
 
 	  	  
 	function setInitialImageDiretor() {
-	    ctx2.clearRect(0, 0, cDiretor.width, cDiretor.height);
-	    ctx2.globalCompositeOperation = "source-over";
-	    ctx2.drawImage(assinatura_customDiretor, 0, 0, cDiretor.width, cDiretor.height);
+	    ctx.clearRect(0, 0, cDiretor.width, cDiretor.height);
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.drawImage(assinatura_customDiretor, 0, 0, cDiretor.width, cDiretor.height);
 	}
 		
 	//Função de configuração do primeiro formulário
 	function setClipDiretor() {
-	    ctx2.globalCompositeOperation = "destination-in";
-	    ctx2.globalCompositeOperation = "source-over";
-	    ctx2.font = "bolder 30.76px  Montserrat, sans-serif";
-	    ctx2.textAlign = "left";
-	    ctx2.fillStyle = "black";
+	    ctx.globalCompositeOperation = "destination-in";
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.font = "bolder 30.76px  Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+	    ctx.fillStyle = "black";
 	}
 
         //Colocação do texto na imgem
 	function setTextDiretor(textDiretor, cargoDiretor, telefoneDiretor) {
 	   setClipDiretor();
-	   ctx2.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
-	   ctx2.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	   ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
+	   ctx.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	   setCargoDiretor(cargoDiretor); //Configuração do setor/segundo formulário
        	   setTelefoneDiretor(telefoneDiretor);
 	}
@@ -316,25 +316,25 @@
 	  
 	//Configuração do segundo formulárioa
 	function setCargoDiretor(cargoDiretor){
-	    ctx2.globalCompositeOperation = "destination-in";
-	    ctx2.globalCompositeOperation = "source-over";
-	    ctx2.font = "30.76px Montserrat, sans-serif";
-	    ctx2.textAlign = "left";
-	    ctx2.fillStyle = "black";
-	    ctx2.textBaseline = "hanging";
-	    ctx2.fillText(cargoDiretor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx.globalCompositeOperation = "destination-in";
+	    ctx.globalCompositeOperation = "source-over";
+	    ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+	    ctx.fillStyle = "black";
+	    ctx.textBaseline = "hanging";
+	    ctx.fillText(cargoDiretor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 
 	  
 	//Configuração de campo de telefone
 	function setTelefoneDiretor(telefoneDiretor){
-	    ctx2.globalCompositeOperation = "destination-in";
-            ctx2.globalCompositeOperation = "source-over";
-            ctx2.font = "30.76px Montserrat, sans-serif";
-	    ctx2.textAlign = "left";
-            ctx2.fillStyle = "black";
-            ctx2.textBaseline = "hanging";
-	    ctx2.fillText(telefoneDiretor, 420, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx.globalCompositeOperation = "destination-in";
+            ctx.globalCompositeOperation = "source-over";
+            ctx.font = "30.76px Montserrat, sans-serif";
+	    ctx.textAlign = "left";
+            ctx.fillStyle = "black";
+            ctx.textBaseline = "hanging";
+	    ctx.fillText(telefoneDiretor, 420, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 
 	</scritp>
