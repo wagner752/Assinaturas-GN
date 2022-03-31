@@ -62,14 +62,14 @@ html, body, .capa{
 
 section#colaborador{
     background-color: white;
-    padding-top: 30%;
+    padding-top: 10%;
     padding-bottom: auto;
     height: 100%;
     width: 100%;
-    border-left: 5px solid #1f3b4c;
-    border-top: 5px solid #181f25;
-    border-right: 5px solid #e0a156;
-    border-bottom: 5px solid #e0a156;
+    border-left: 15px solid #1f3b4c;
+    border-top: 15px solid #181f25;
+    border-right: 15px solid #e0a156;
+    border-bottom: 15px solid #e0a156;
 }
 
 section#colaborador img{
