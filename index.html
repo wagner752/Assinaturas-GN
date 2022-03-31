@@ -30,8 +30,8 @@
                     <div class="form-group col">
                         <div class="col-auto">
                                 <!-- Input referente ao nome do colaborador -->
-                            <label id="label-nome" for="nome">Nome do colaborador</label>
-                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nome" required="true">
+                            <label id="label-nomeColaborador" for="nomeColaborador">Nome do colaborador</label>
+                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nomeColaborador" required="true">
                         </div>
                     </div>
                 
@@ -61,8 +61,8 @@
                     
                     <div class="row">
                         <div class="col">
-                            <label id="label-telefone" for="telefone">Celular (Opcional)</label>
-                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefone">
+                            <label id="label-telefoneColaborador" for="telefoneColaborador">Celular (Opcional)</label>
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefoneColaborador">
                         </div>
                     </div> <!-- /form-row -->
                 </form>
@@ -111,24 +111,24 @@
 	assinatura_custom.src = "assinatura.png";
 	
 	//Chamar o que é digitado para a função de rederização
-	nome.oninput = setor.oninput = telefone.oninput = render;
+	nomeColaborador.oninput = setor.oninput = telefoneColaborador.oninput = render;
 	
 	//Renderização da imagem
 	function render() {
-	    let {nome, setor, telefone} = getFormData();
+	    let {nomeColaborador, setor, telefoneColaborador} = getFormData();
 	    setInitialImage();
-	    setText(nome, setor, telefone);
+	    setText(nomeColaborador, setor, telefoneColaborador);
 	    setImage();
 	}
 	
 	//Função para gerar os dados que advem do fomulário, retornando os seus valores
 	function getFormData() {
 	    return {
-		nome: nome
+		nome: nomeColaborador
 		    .value,
 		setor: setor
 		    .value,
-                telefone: telefone
+                telefone: telefoneColaborador
                     .value
 	    }
 	}
@@ -156,12 +156,12 @@
 	}
 	
 	//Colocação do texto na imgem
-	function setText(text, setor, telefone) {
+	function setText(textColaborador, setor, telefoneColaborador) {
 	    setClip();
 	    ctx.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
-	    ctx.fillText(text, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx.fillText(textColaborador, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	    setSetor(setor); //Configuração do setor/segundo formulário
-            setTelefone(telefone);
+            setTelefone(telefoneColaborador);
 	}
 	
 	//Configuração do segundo formulárioa
@@ -176,14 +176,14 @@
 	}
 	
 	//Configuração de campo de telefone
-	function setTelefone(telefone){
+	function setTelefone(telefoneColaborador){
 	    ctx.globalCompositeOperation = "destination-in";
             ctx.globalCompositeOperation = "source-over";
             ctx.font = "30.76px Montserrat, sans-serif";
 	    ctx.textAlign = "left";
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
-	    ctx.fillText(telefone, 480, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx.fillText(telefoneColaborador, 420, 144); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	  
 	//Função para baixar a imagem
