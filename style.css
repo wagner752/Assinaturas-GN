@@ -50,8 +50,7 @@ html, body, .capa{
 
 .btn-branco{
     font-family: 'Montserrat', sans-serif;
-    
-	color: white;
+    color: white;
     background-color: #0c6984;
 }
 
@@ -73,7 +72,7 @@ section#colaborador label{
     color: white;
 }
 
-section#colaborador img{
+img{
    border: 5px solid black;
 }
 
