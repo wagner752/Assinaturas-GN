@@ -38,12 +38,12 @@ html, body, .capa{
 	margin-left: 3%;
 }
 
-.btn-azul{
+.btn-verde{
     background-color: #89d340;
     font-family: 'Montserrat', sans-serif;
 }
 
-.btn-azul:hover{
+.btn-verde:hover{
     background-color: #181f25;
     color: white;
 }
@@ -61,15 +61,33 @@ html, body, .capa{
 }
 
 section#colaborador{
-    backgroud-color: #89d340;
+    background-color: #89d340;
+    padding-top: 10%;
+    padding-bottom: auto;
     height: 100%;
     width: 100%;
+    box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+section#colaborador label{
+    color: white;
 }
 
 section#colaborador img{
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+section#colaborador form{
+	color: white;
+	font-weight: bolder;
+}
+
+section#colaborador input{
+	background-color: white;
+	color: white;
+	font-weight: bolder;
 }
 
 input#nome{
@@ -79,8 +97,12 @@ input#nome{
 section#diretor{
     padding-top: 10%;
     padding-bottom: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
     height: 100%;
     width: 100%;
+    background-color: #0c6984;
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 section#diretor form{
@@ -94,18 +116,3 @@ section#diretor input{
 	font-weight: bolder;
 }
 
-section#diretor input::placeholder {
-  color: black;
-  font-weight: bolder;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: black;
- font-weight: bolder;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
- color: black;
- font-weight: bolder;
-}
