@@ -4,6 +4,7 @@ body{
     background: url("capa.png");
     background-attachment: fixed;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 html, body, .capa{
