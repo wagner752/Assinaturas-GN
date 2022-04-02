@@ -85,6 +85,10 @@ section#colaborador input{
 	font-weight: bolder;
 }
 
+section#colaborador button{
+	background-color: #0c6984;
+}
+
 input#nome{
 	size: 300px;
 }
