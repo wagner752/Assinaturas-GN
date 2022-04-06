@@ -231,7 +231,7 @@
 	function setTelefone(telefoneColaborador){
 	    ctx.globalCompositeOperation = "destination-in";
             ctx.globalCompositeOperation = "source-over";
-            ctx.font = "21px, Montserrat, sans-serif";
+            ctx.font = "21px Montserrat, sans-serif";
 	    ctx.textAlign = "left";
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
@@ -345,7 +345,7 @@
 	    let link = document.getElementById('link');
 	    //$("#telefone").prop('required', true);
 	    link.setAttribute('download', 'assinatura.png');
-	    link.setAttribute('href', c.toDataURL().replace("image/png", "image/octet-stream"));
+	    link.setAttribute('href', clider.toDataURL().replace("image/png", "image/octet-stream"));
 	    link.click()
 	}	
 		
