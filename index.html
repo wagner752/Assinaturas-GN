@@ -237,8 +237,7 @@
             ctx.textBaseline = "hanging";
 	    ctx.fillText(telefoneColaborador, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
-
-	  
+  
 	//Função para baixar a imagem
 	function saveImage() {
 	    let link = document.getElementById('link');
@@ -340,6 +339,15 @@
             ctx2.textBaseline = "hanging";
 	    ctx2.fillText(telefoneDiretor, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
-
+	
+	//Função para baixar a imagem
+	function saveImageDiretor() {
+	    let link = document.getElementById('link');
+	    //$("#telefone").prop('required', true);
+	    link.setAttribute('download', 'assinatura.png');
+	    link.setAttribute('href', c.toDataURL().replace("image/png", "image/octet-stream"));
+	    link.click()
+	}	
+		
 	</script>
 </html>
