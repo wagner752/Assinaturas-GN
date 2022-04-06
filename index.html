@@ -127,11 +127,6 @@
 	</div> <!-- /container -->
     </section>
 
-	<footer>
-
-	</footer>
-	
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -190,7 +185,6 @@
 	    ctx.drawImage(assinatura_custom, 0, 0, c.width, c.height);
 	}
 
-	
 	//Função de configuração do primeiro formulário
 	function setClip() {
 	    ctx.globalCompositeOperation = "destination-in";
@@ -283,14 +277,12 @@
 		  .value
 		    }
 	}
-	
 	  
 	function setImagelider() {
 		   const assinatura = document.getElementById('assinaturaTemplatelider');
 		   assinatura.src = clider.toDataURL();
 		   clider.style.display = "none";
 	}	
-
 	  	  
 	function setInitialImagelider() {
 	    ctx2.clearRect(0, 0, clider.width, clider.height);
@@ -316,7 +308,6 @@
        	   setTelefonelider(telefonelider);
 	}
 
-	  
 	//Configuração do segundo formulárioa
 	function setCargolider(cargolider){
 	    ctx2.globalCompositeOperation = "destination-in";
@@ -328,7 +319,6 @@
 	    ctx2.fillText(cargolider, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 
-	  
 	//Configuração de campo de telefone
 	function setTelefonelider(telefonelider){
 	    ctx2.globalCompositeOperation = "destination-in";
@@ -347,7 +337,6 @@
 	    link.setAttribute('download', 'assinatura.png');
 	    link.setAttribute('href', clider.toDataURL().replace("image/png", "image/octet-stream"));
 	    link.click()
-	}	
-		
+	}		
 	</script>
 </html>
