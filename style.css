@@ -6,7 +6,7 @@ body{
     overflow-x: hidden;
 }
 
-html, body, .inicial{
+html, body, #inicial{
 	height: 100%;
 }
 
