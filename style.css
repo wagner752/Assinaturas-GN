@@ -23,7 +23,7 @@ html, body, .capa{
 .ballonTex{
 	position: fixed; 
 	bottom: 60%; 
-	right: 100%; 
+	right: 60%; 
 	width: 75px; 
 	height: 75px;
 	border: 2px solid white;
