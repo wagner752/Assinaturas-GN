@@ -20,6 +20,16 @@ html, body, .capa{
 	width: 100%; 
 }
 
+.ballonTex{
+	position: fixed; 
+	bottom: 0%; 
+	right: 100%; 
+	width: 75px; 
+	height: 75px;
+	border: 2px solid white;
+	border-radius: 10%;
+}
+
 .texto-capa {
 	text-align: center;
 	color: white;
