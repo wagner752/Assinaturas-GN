@@ -10,7 +10,7 @@ html, body, #inicial{
 	height: 100%;
 }
 
-.capa {
+#inicial {
 	display: table;
 	width: 100%; 
 }
