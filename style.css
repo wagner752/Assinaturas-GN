@@ -6,11 +6,11 @@ body{
     overflow-x: hidden;
 }
 
-html, body, #inicial{
+html, body, .capa{
 	height: 100%;
 }
 
-#inicial {
+.capa {
 	display: table;
 	width: 100%; 
 }
