@@ -15,6 +15,11 @@ html, body, #inicial{
 	width: 100%; 
 }
 
+.capa {
+	display: table;
+	width: 100%; 
+}
+
 .texto-capa {
 	text-align: center;
 	color: white;
