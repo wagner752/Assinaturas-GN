@@ -119,6 +119,7 @@ section#lider{
 section#lider form{
 	color: white;
 	font-weight: bolder;
+	padding-top: 10%;
 }
 
 section#lider input{
