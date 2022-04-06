@@ -18,7 +18,7 @@
     	<div class="texto-capa">
     		<h1>Assinatura<br> Gentil Negócios</h1>
     		<a href="#colaborador" class="btn btn-custom btn-verde btn-lg">Colaborador</a>
-    		<a href="#diretor" class="btn btn-custom btn-branco btn-lg">Líderes</a>
+    		<a href="#lider" class="btn btn-custom btn-branco btn-lg">Líderes</a>
     	</div>
     </div>
 
@@ -82,45 +82,45 @@
         </div> <!-- /Container -->
     </section>
 	
-    <section id="diretor">
+    <section id="lider">
     	<div class="container">
             <div class="row">
 	    	
 		 <form>
                     <div class="form-group col">
                         <div class="col-auto">
-                                <!-- Input referente ao nome do diretor -->
-                            <label id="label-nomeDiretor" for="nomeDiretor">Nome do diretor</label>
-                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nomeDiretor" required="true">
+                                <!-- Input referente ao nome do lider -->
+                            <label id="label-nomelider" for="nomelider">Nome do lider</label>
+                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nomelider" required="true">
                         </div>
                     </div>
 			 
 	            <div class="form-group col">
                         <div class="col-auto">
-                                <!-- Input referente ao nome do diretor -->
-                            <label id="label-cargoDiretor" for="cargoDiretor">Cargo</label>
-                            <input type="text" class="form-control" placeholder="Digite o seu cargo" id="cargoDiretor" required="true">
+                                <!-- Input referente ao nome do lider -->
+                            <label id="label-cargolider" for="cargolider">Cargo</label>
+                            <input type="text" class="form-control" placeholder="Digite o seu cargo" id="cargolider" required="true">
                         </div>
                     </div>
 		    
 			 
 		    <div class="row">
                         <div class="col">
-                            <label id="label-telefoneDiretor" for="telefoneDiretor">Celular (Opcional)</label>
-                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefoneDiretor">
+                            <label id="label-telefonelider" for="telefonelider">Celular (Opcional)</label>
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefonelider">
                         </div>
                     </div> <!-- /form-row -->
 			 
 			  <!-- Canva referente a imagem, usado apenas para gerar a imagem -->
-			<canvas class="img-fluid" id="cDiretor" width="100%" height="100%"></canvas>
+			<canvas class="img-fluid" id="clider" width="100%" height="100%"></canvas>
 
 			<a id="link" target="new_blank"></a>
 			<div id="toggle" class="signature">
-			    <img crossOrigin="anonymous" class="img-fluid" id="assinaturaTemplateDiretor" style="margin-top: 2%;">
+			    <img crossOrigin="anonymous" class="img-fluid" id="assinaturaTemplatelider" style="margin-top: 2%;">
 			</div>
 
 			<!-- Download da imagem -->
-			<button type="submit" onclick="saveImageDiretor()" class="btn btn-primary btn-verde" style="margin-top: 2%; border: 1px solid white; width: 200px;">Baixar Assinatura</button>
+			<button type="submit" onclick="saveImagelider()" class="btn btn-primary btn-verde" style="margin-top: 2%; border: 1px solid white; width: 200px;">Baixar Assinatura</button>
 			 
                 </form>
 	    </div> <!-- /row -->
@@ -249,57 +249,57 @@
 	</script>
 	
 	<script type="text/javascript" crossorigin="anonymous">
-	ctx2 = cDiretor.getContext("2d");
+	ctx2 = clider.getContext("2d");
 
-	assinatura_customDiretor = new Image();
+	assinatura_customlider = new Image();
 		//Tamanho da assinatura, devendo ser o mesmo tamanho da imagem para redenrização
-		assinatura_customDiretor.onload = () => {
-		    cDiretor.width = 1080;
-		    cDiretor.height = 257;
-		    renderDiretor();
+		assinatura_customlider.onload = () => {
+		    clider.width = 1080;
+		    clider.height = 257;
+		    renderlider();
 		};
 
-	assinatura_customDiretor.crossOrigin = "anonymous"
+	assinatura_customlider.crossOrigin = "anonymous"
 
-	assinatura_customDiretor.src = "assinatura.png";
+	assinatura_customDlider.src = "assinatura.png";
 
-	nomeDiretor.oninput = cargoDiretor.oninput = telefoneDiretor.oninput = renderDiretor;
+	nomelider.oninput = cargolider.oninput = telefonelider.oninput = renderlider;
 
-	function renderDiretor(){
-		   let {nomeDiretor, cargoDiretor, telefoneDiretor} = getFormDataDiretor();
-		   setInitialImageDiretor();
-		   setTextDiretor(nomeDiretor, cargoDiretor, telefoneDiretor);
-		   setImageDiretor();
+	function renderlider(){
+		   let {nomelider, cargolider, telefonelider} = getFormDatalider();
+		   setInitialImagelider();
+		   setTextlider(nomelider, cargolider, telefonelider);
+		   setImagelider();
 	}
 
 	//Função para gerar os dados que advem do fomulário, retornando os seus valores
-	function getFormDataDiretor(){
+	function getFormDatalider(){
 		   return {
-		nomeDiretor: nomeDiretor
+		nomelider: nomelider
 			   .value,
-		cargoDiretor: cargoDiretor
+		cargolider: cargolider
 			   .value,
-	    telefoneDiretor: telefoneDiretor
+	    telefonelider: telefonelider
 		  .value
 		    }
 	}
 	
 	  
-	function setImageDiretor() {
-		   const assinatura = document.getElementById('assinaturaTemplateDiretor');
-		   assinatura.src = cDiretor.toDataURL();
-		   cDiretor.style.display = "none";
+	function setImagelider() {
+		   const assinatura = document.getElementById('assinaturaTemplatelider');
+		   assinatura.src = clider.toDataURL();
+		   clider.style.display = "none";
 	}	
 
 	  	  
-	function setInitialImageDiretor() {
-	    ctx2.clearRect(0, 0, cDiretor.width, cDiretor.height);
+	function setInitialImagelider() {
+	    ctx2.clearRect(0, 0, clider.width, clider.height);
 	    ctx2.globalCompositeOperation = "source-over";
-	    ctx2.drawImage(assinatura_customDiretor, 0, 0, cDiretor.width, cDiretor.height);
+	    ctx2.drawImage(assinatura_customlider, 0, 0, clider.width, clider.height);
 	}
 		
 	//Função de configuração do primeiro formulário
-	function setClipDiretor() {
+	function setCliplider() {
 	    ctx2.globalCompositeOperation = "destination-in";
 	    ctx2.globalCompositeOperation = "source-over";
 	    ctx2.font = "bolder 30.76px  Montserrat, sans-serif";
@@ -308,40 +308,40 @@
 	}
 
         //Colocação do texto na imgem
-	function setTextDiretor(textDiretor, cargoDiretor, telefoneDiretor) {
-	   setClipDiretor();
+	function setTextlider(textlider, cargolider, telefonelider) {
+	   setCliplider();
 	   ctx2.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
-	   ctx2.fillText(textDiretor, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
-	   setCargoDiretor(cargoDiretor); //Configuração do setor/segundo formulário
-       	   setTelefoneDiretor(telefoneDiretor);
+	   ctx2.fillText(textlider, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	   setCargolider(cargolider); //Configuração do setor/segundo formulário
+       	   setTelefonelider(telefonelider);
 	}
 
 	  
 	//Configuração do segundo formulárioa
-	function setCargoDiretor(cargoDiretor){
+	function setCargolider(cargolider){
 	    ctx2.globalCompositeOperation = "destination-in";
 	    ctx2.globalCompositeOperation = "source-over";
 	    ctx2.font = "30.76px Montserrat, sans-serif";
 	    ctx2.textAlign = "left";
 	    ctx2.fillStyle = "black";
 	    ctx2.textBaseline = "hanging";
-	    ctx2.fillText(cargoDiretor, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx2.fillText(cargolider, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 
 	  
 	//Configuração de campo de telefone
-	function setTelefoneDiretor(telefoneDiretor){
+	function setTelefonelider(telefoneliderr){
 	    ctx2.globalCompositeOperation = "destination-in";
             ctx2.globalCompositeOperation = "source-over";
             ctx2.font = "21px Montserrat, sans-serif";
 	    ctx2.textAlign = "left";
             ctx2.fillStyle = "black";
             ctx2.textBaseline = "hanging";
-	    ctx2.fillText(telefoneDiretor, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    ctx2.fillText(telefonelider, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	
 	//Função para baixar a imagem
-	function saveImageDiretor() {
+	function saveImagelider() {
 	    let link = document.getElementById('link');
 	    //$("#telefone").prop('required', true);
 	    link.setAttribute('download', 'assinatura.png');
