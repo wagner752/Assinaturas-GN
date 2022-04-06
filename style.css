@@ -10,6 +10,10 @@ html, body, .capa{
 	height: 100%;
 }
 
+section#incial{
+	height: 100%;
+}
+
 .capa {
 	display: table;
 	width: 100%; 
