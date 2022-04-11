@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col">
                             <label id="label-telefoneColaborador" for="telefoneColaborador">Celular (Opcional)</label>
-                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefoneColaborador">
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefoneColaborador" maxlength="11">
                         </div>
                     </div> <!-- /form-row -->
                 </form>
@@ -235,6 +235,31 @@
 	    ctx.fillText(telefoneColaborador, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
   
+	//Máscara de telefone
+	//Disponível em: https://codepen.io/adelmodias/pen/aKVwoE
+	function mascara(o,f){
+	    v_obj=o
+	    v_fun=f
+	    setTimeout("execmascara()",1)
+	}
+	function execmascara(){
+	    v_obj.value=v_fun(v_obj.value)
+	}
+	function mtel(v){
+	    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+	    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+	    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+	    return v;
+	}
+	function id( el ){
+		return document.getElementById( el );
+	}
+	window.onload = function(){
+		id('telefoneColaborador').onkeyup = function(){
+			mascara( this, mtel );
+		}
+	}
+	  
 	//Função para baixar a imagem
 	function saveImage() {
 	    let link = document.getElementById('link');
