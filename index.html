@@ -112,7 +112,7 @@
 		    <div class="row">
                         <div class="col">
                             <label id="label-telefonelider" for="telefonelider">Celular (Opcional)</label>
-                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefonelider">
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefonelider" maxlength="11">
                         </div>
                     </div> <!-- /form-row -->
 			 
@@ -235,7 +235,7 @@
             ctx.fillStyle = "black";
             ctx.textBaseline = "hanging";
 	    telefoneColaborador=telefoneColaborador.replace(/\D/g,""); //Remove tudo o que não é dígito
-	    telefoneColaborador = telefoneColaborador.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3");
+	    telefoneColaborador = telefoneColaborador.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3"); //Adiciona o parentese e hífen ao número
 	    ctx.fillText(telefoneColaborador, 440, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
   
@@ -337,7 +337,9 @@
 	    ctx2.textAlign = "left";
             ctx2.fillStyle = "black";
             ctx2.textBaseline = "hanging";
-	    ctx2.fillText(telefonelider, 420, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	    telefonelider=telefonelider.replace(/\D/g,""); //Remove tudo o que não é dígito
+	    telefonelider = telefonelider.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3"); //Adiciona o parentese e hífen ao número
+	    ctx2.fillText(telefonelider, 440, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
 	}
 	
 	//Função para baixar a imagem
