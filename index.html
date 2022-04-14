@@ -20,7 +20,8 @@
 	    <div class="capa">
 		<div class="texto-capa">
 			<h1>Assinatura<br> Gentil Negócios</h1>
-			<a href="#colaborador" class="btn btn-custom btn-verde btn-lg">Fazer assinatura</a>
+			<a href="#colaborador" class="btn btn-custom btn-verde btn-lg">Colaborador</a>
+			<a href="#lider" class="btn btn-custom btn-branco btn-lg">Líderes</a>
 		</div>
 	    </div>
 
@@ -84,6 +85,51 @@
 			
             </div> <!-- /row -->
         </div> <!-- /Container -->
+    </section>
+	
+    <section id="lider">
+    	<div class="container">
+            <div class="row">
+	    	
+		 <form>
+                    <div class="form-group col">
+                        <div class="col-auto">
+                                <!-- Input referente ao nome do lider -->
+                            <label id="label-nomelider" for="nomelider">Nome do lider</label>
+                            <input type="text" class="form-control" placeholder="Nome e Sobrenome" id="nomelider" required="true" maxlength="22">
+                        </div>
+                    </div>
+			 
+	            <div class="form-group col">
+                        <div class="col-auto">
+                                <!-- Input referente ao nome do lider -->
+                            <label id="label-cargolider" for="cargolider">Cargo</label>
+                            <input type="text" class="form-control" placeholder="Digite o seu cargo" id="cargolider" required="true">
+                        </div>
+                    </div>
+		    
+			 
+		    <div class="row">
+                        <div class="col">
+                            <label id="label-telefonelider" for="telefonelider">Celular (Opcional)</label>
+                            <input type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX" id="telefonelider" maxlength="11">
+                        </div>
+                    </div> <!-- /form-row -->
+			 
+			  <!-- Canva referente a imagem, usado apenas para gerar a imagem -->
+			<canvas class="img-fluid" id="clider" width="100%" height="100%"></canvas>
+
+			<a id="link" target="new_blank"></a>
+			<div id="toggle" class="signature">
+			    <img crossOrigin="anonymous" class="img-fluid" id="assinaturaTemplatelider" style="margin-top: 2%;">
+			</div>
+
+			<!-- Download da imagem -->
+			<button type="submit" onclick="saveImagelider()" class="btn btn-primary btn-verde" style="margin-top: 2%; border: 1px solid white; width: 200px;">Baixar Assinatura</button>
+			 
+                </form>
+	    </div> <!-- /row -->
+	</div> <!-- /container -->
     </section>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -206,4 +252,103 @@
 	}
 	</script>
 	
+	<script type="text/javascript" crossorigin="anonymous">
+	ctx2 = clider.getContext("2d");
+
+	assinatura_customlider = new Image();
+		//Tamanho da assinatura, devendo ser o mesmo tamanho da imagem para redenrização
+		assinatura_customlider.onload = () => {
+		    clider.width = 1080;
+		    clider.height = 257;
+		    renderlider();
+		};
+
+	assinatura_customlider.crossOrigin = "anonymous"
+
+	assinatura_customlider.src = "assinatura.png";
+
+	nomelider.oninput = cargolider.oninput = telefonelider.oninput = renderlider;
+
+	function renderlider(){
+		   let {nomelider, cargolider, telefonelider} = getFormDatalider();
+		   setInitialImagelider();
+		   setTextlider(nomelider, cargolider, telefonelider);
+		   setImagelider();
+	}
+
+	//Função para gerar os dados que advem do fomulário, retornando os seus valores
+	function getFormDatalider(){
+		   return {
+		nomelider: nomelider
+			   .value,
+		cargolider: cargolider
+			   .value,
+	    telefonelider: telefonelider
+		  .value
+		    }
+	}
+	  
+	function setImagelider() {
+		   const assinatura = document.getElementById('assinaturaTemplatelider');
+		   assinatura.src = clider.toDataURL();
+		   clider.style.display = "none";
+	}	
+	  	  
+	function setInitialImagelider() {
+	    ctx2.clearRect(0, 0, clider.width, clider.height);
+	    ctx2.globalCompositeOperation = "source-over";
+	    ctx2.drawImage(assinatura_customlider, 0, 0, clider.width, clider.height);
+	}
+		
+	//Função de configuração do primeiro formulário
+	function setCliplider() {
+	    ctx2.globalCompositeOperation = "destination-in";
+	    ctx2.globalCompositeOperation = "source-over";
+	    ctx2.font = "bolder 30.76px  Montserrat, sans-serif";
+	    ctx2.textAlign = "left";
+	    ctx2.fillStyle = "black";
+	}
+
+        //Colocação do texto na imgem
+	function setTextlider(textlider, cargolider, telefonelider) {
+	   setCliplider();
+	   ctx2.textBaseline = "hanging"; //Mostra o texto sendo escrito na tela em tempo real
+	   ctx2.fillText(textlider, 270, 62); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	   setCargolider(cargolider); //Configuração do setor/segundo formulário
+       	   setTelefonelider(telefonelider);
+	}
+
+	//Configuração do segundo formulárioa
+	function setCargolider(cargolider){
+	    ctx2.globalCompositeOperation = "destination-in";
+	    ctx2.globalCompositeOperation = "source-over";
+	    ctx2.font = "27px Montserrat, sans-serif";
+	    ctx2.textAlign = "left";
+	    ctx2.fillStyle = "black";
+	    ctx2.textBaseline = "hanging";
+	    ctx2.fillText(cargolider, 270, 100); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	}
+
+	//Configuração de campo de telefone
+	function setTelefonelider(telefonelider){
+	    ctx2.globalCompositeOperation = "destination-in";
+            ctx2.globalCompositeOperation = "source-over";
+            ctx2.font = "21px Montserrat, sans-serif";
+	    ctx2.textAlign = "left";
+            ctx2.fillStyle = "black";
+            ctx2.textBaseline = "hanging";
+	    telefonelider=telefonelider.replace(/\D/g,""); //Remove tudo o que não é dígito
+	    telefonelider = telefonelider.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3"); //Adiciona o parentese e hífen ao número
+	    ctx2.fillText(telefonelider, 440, 137); //Definição de onde o texto ira iniciar nas coordenadas X e Y
+	}
+	
+	//Função para baixar a imagem
+	function saveImagelider() {
+	    let link = document.getElementById('link');
+	    //$("#telefone").prop('required', true);
+	    link.setAttribute('download', 'assinatura.png');
+	    link.setAttribute('href', clider.toDataURL().replace("image/png", "image/octet-stream"));
+	    link.click()
+	}		
+	</script>
 </html>
